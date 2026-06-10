@@ -12,7 +12,7 @@
 </head>
 <body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col justify-between selection:bg-teal-600 selection:text-white">
 
-    <header class="bg-white/70 backdrop-blur-md border-b border-slate-200/80 text-slate-900 shadow-xs sticky top-0 z-50">
+    <header class="bg-white/70 backdrop-blur-md border-b border-slate-200/80 text-slate-900 shadow-sm sticky top-0 z-50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <div class="flex items-center space-x-3 cursor-pointer" onclick="showWelcomePage()">
                 <div class="bg-teal-600 text-white p-2.5 rounded-xl shadow-md shadow-teal-600/20">
@@ -68,7 +68,7 @@
                     </div>
                     <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
                         <p class="text-[10px] text-slate-400 font-bold uppercase">Response Window</p>
-                        <p class="text-2xl font-extrabold text-teal-600 mt-1">&lt; 2 Hrs</p>
+                        <p class="text-2xl font-extrabold text-teal-600 mt-1">24/7 Live</p>
                     </div>
                 </div>
                 <div class="p-3.5 bg-emerald-50/50 border border-emerald-100 text-emerald-800 text-xs rounded-xl font-medium flex items-start gap-2.5">
@@ -77,21 +77,26 @@
             </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-20">
-            <div class="bg-white p-6 rounded-2xl border border-slate-200/60 shadow-xs hover:border-teal-500/30 transition">
-                <div class="w-8 h-8 bg-slate-100 rounded-lg flex items-center justify-center font-bold text-sm text-slate-700 mb-4">01</div>
-                <h4 class="font-bold text-slate-900 text-sm mb-1">Structured Intake Routing</h4>
-                <p class="text-slate-500 text-xs leading-relaxed">Accepts core patient parameters, categorizing requests dynamically to limit operational backend overhead.</p>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mt-20">
+            <div class="bg-white p-5 rounded-2xl border border-slate-200/60 shadow-sm hover:border-teal-500/30 transition">
+                <div class="w-8 h-8 bg-slate-100 rounded-lg flex items-center justify-center font-bold text-sm text-slate-700 mb-3">01</div>
+                <h4 class="font-bold text-slate-900 text-xs mb-1">Structured Intake</h4>
+                <p class="text-slate-500 text-[11px] leading-relaxed">Accepts patient parameters, categorizing core operational requests dynamically.</p>
             </div>
-            <div class="bg-white p-6 rounded-2xl border border-slate-200/60 shadow-xs hover:border-teal-500/30 transition">
-                <div class="w-8 h-8 bg-slate-100 rounded-lg flex items-center justify-center font-bold text-sm text-slate-700 mb-4">02</div>
-                <h4 class="font-bold text-slate-900 text-sm mb-1">Rule-Based Intent Scanners</h4>
-                <p class="text-slate-500 text-xs leading-relaxed">Scans payload messages for emergency keyword flags, sorting critical tier cases instantly for quick relief.</p>
+            <div class="bg-white p-5 rounded-2xl border border-slate-200/60 shadow-sm hover:border-teal-500/30 transition">
+                <div class="w-8 h-8 bg-slate-100 rounded-lg flex items-center justify-center font-bold text-sm text-slate-700 mb-3">02</div>
+                <h4 class="font-bold text-slate-900 text-xs mb-1">Rule Intent Scanner</h4>
+                <p class="text-slate-500 text-[11px] leading-relaxed">Scans payloads for emergency keyword matchers, sorting severe tokens instantly.</p>
             </div>
-            <div class="bg-white p-6 rounded-2xl border border-slate-200/60 shadow-xs hover:border-teal-500/30 transition">
-                <div class="w-8 h-8 bg-slate-100 rounded-lg flex items-center justify-center font-bold text-sm text-slate-700 mb-4">03</div>
-                <h4 class="font-bold text-slate-900 text-sm mb-1">Virtual Assistant Framework</h4>
-                <p class="text-slate-500 text-xs leading-relaxed">Maintains a localized FAQ processing sandbox, letting users resolve medicine and onboarding queries instantly.</p>
+            <div class="bg-white p-5 rounded-2xl border border-slate-200/60 shadow-sm hover:border-teal-500/30 transition">
+                <div class="w-8 h-8 bg-slate-100 rounded-lg flex items-center justify-center font-bold text-sm text-slate-700 mb-3">03</div>
+                <h4 class="font-bold text-slate-900 text-xs mb-1">Ambulance & Logistics</h4>
+                <p class="text-slate-500 text-[11px] leading-relaxed">Coordinates dynamic routing pipelines for emergency dispatch vehicles and critical medical inventory.</p>
+            </div>
+            <div class="bg-white p-5 rounded-2xl border border-slate-200/60 shadow-sm hover:border-teal-500/30 transition">
+                <div class="w-8 h-8 bg-slate-100 rounded-lg flex items-center justify-center font-bold text-sm text-slate-700 mb-3">04</div>
+                <h4 class="font-bold text-slate-900 text-xs mb-1">Assistant Sandbox</h4>
+                <p class="text-slate-500 text-[11px] leading-relaxed">Maintains a localized pattern FAQ layout, letting users resolve support paths instantly.</p>
             </div>
         </div>
     </div>
@@ -123,6 +128,7 @@
                         <select id="category" class="w-full border border-slate-200 p-3.5 rounded-xl focus:outline-none focus:border-slate-900 focus:ring-1 focus:ring-slate-900 bg-slate-50/50 text-slate-700 font-bold cursor-pointer text-sm">
                             <option value="General Checkup">General Medical Inquiry</option>
                             <option value="Medicine Support">Free Medicine Requirement</option>
+                            <option value="Ambulance Support">Emergency Ambulance / Core Logistics</option>
                             <option value="Volunteer">Volunteer Registration</option>
                         </select>
                     </div>
@@ -130,7 +136,7 @@
 
                 <div>
                     <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Payload Description / Medical Symptoms</label>
-                    <textarea id="message" required placeholder="Provide clinical context... (Type words like 'urgent' or 'severe pain' to watch the triage engine sort operational parameters!)" class="w-full border border-slate-200 p-3.5 rounded-xl focus:outline-none focus:border-slate-900 focus:ring-1 focus:ring-slate-900 bg-slate-50/50 transition-all placeholder:text-slate-400 text-sm leading-relaxed" rows="4"></textarea>
+                    <textarea id="message" required placeholder="Provide clinical context... (Try typing words like 'ambulance', 'urgent', 'oxygen' or 'severe pain' to see the automation matrix routing!)" class="w-full border border-slate-200 p-3.5 rounded-xl focus:outline-none focus:border-slate-900 focus:ring-1 focus:ring-slate-900 bg-slate-50/50 transition-all placeholder:text-slate-400 text-sm leading-relaxed" rows="4"></textarea>
                 </div>
 
                 <button type="submit" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold p-4 rounded-xl transition duration-300 shadow-md cursor-pointer text-sm tracking-wide">
@@ -163,8 +169,8 @@
                 <button id="closeChat" class="text-slate-400 hover:text-white font-bold cursor-pointer text-lg">&times;</button>
             </div>
             <div id="chatBody" class="p-4 flex-grow overflow-y-auto space-y-3.5 text-xs bg-slate-50">
-                <div class="bg-white border border-slate-200/80 text-slate-800 p-3 rounded-xl rounded-tl-none max-w-[85%] leading-relaxed shadow-xs">
-                    System initialized. I resolve immediate queries regarding platform services, free drug logistics, and volunteer entry pipelines. Pass an internal string query.
+                <div class="bg-white border border-slate-200/80 text-slate-800 p-3 rounded-xl rounded-tl-none max-w-[85%] leading-relaxed shadow-sm">
+                    System initialized. I resolve immediate queries regarding platform services, free drug logistics, ambulance pipelines, and medical camp onboarding. Pass an internal string query.
                 </div>
             </div>
             <div class="p-2 border-t border-slate-200 flex gap-1 bg-white">
@@ -195,13 +201,15 @@
             e.preventDefault();
             const name = document.getElementById('name').value;
             const message = document.getElementById('message').value.toLowerCase();
+            const category = document.getElementById('category').value;
             
             let priority = "CRITICAL_TIER_0 (Low/Routine Inflow Matrix)";
-            let suggestion = "Data packet committed to active ledger memory. Routine volunteer dispatched window: 24 business hours.";
+            let suggestion = "Data packet committed to active ledger memory. Active status: 24/7 on-call queue handling routine routing procedures.";
             
-            if (message.includes('urgent') || message.includes('pain') || message.includes('emergency') || message.includes('fever') || message.includes('accident')) {
-                priority = "🚨 ESCALATED_TIER_3 (High Severity Exception Event)";
-                suggestion = "Clinical metrics indicate potential acute symptoms. Regex analyzer bypassed routine workflow queues. Priority ticket dispatched directly to live medical responders. ETA: &lt; 120 minutes.";
+            // INTEGRATED: Ambulance, Oxygen, and Severe medical keywords priority mapping
+            if (message.includes('urgent') || message.includes('pain') || message.includes('emergency') || message.includes('fever') || message.includes('accident') || message.includes('ambulance') || message.includes('oxygen') || message.includes('blood') || category === "Ambulance Support") {
+                priority = "🚨 ESCALATED_TIER_3 (CRITICAL EMERGENCY EVENT)";
+                suggestion = "Critical metrics or logistics flags detected. System bypassed routine queues. Emergency dispatch parameters mapped. NGO ambulance dispatch sequence or prioritized clinical care coordination initiated immediately on a 24/7 basis.";
             } else if (message.includes('volunteer') || message.includes('help') || message.includes('join')) {
                 priority = "🤝 INFRASTRUCTURE_GROWTH (Staff Onboarding Log)";
                 suggestion = "Interest capture successful. Resource management systems initialized. Platform parameters updated to deliver an onboarding directory map and medical campaign schedules.";
@@ -232,7 +240,7 @@
             const msgDiv = document.createElement('div');
             msgDiv.className = isUser 
                 ? "bg-slate-900 text-white p-2.5 rounded-xl rounded-tr-none max-w-[85%] ml-auto text-right font-mono"
-                : "bg-white border border-slate-200/80 text-slate-800 p-2.5 rounded-xl rounded-tl-none max-w-[85%] leading-relaxed shadow-xs";
+                : "bg-white border border-slate-200/80 text-slate-800 p-2.5 rounded-xl rounded-tl-none max-w-[85%] leading-relaxed shadow-sm";
             msgDiv.innerHTML = text;
             chatBody.appendChild(msgDiv);
             chatBody.scrollTop = chatBody.scrollHeight;
@@ -246,12 +254,14 @@
             chatInput.value = '';
 
             setTimeout(() => {
-                let reply = "ERR: Unresolved input string intent. Pass values like 'services', 'medicines', or 'volunteer' for structural parsing.";
+                let reply = "ERR: Unresolved input string intent. Pass values like 'services', 'medicines', 'ambulance', or 'volunteer' for structural parsing.";
                 
                 if (query.includes('service') || query.includes('work') || query.includes('do')) {
-                    reply = "<b>Architecture Core:</b> MediSupport serves as the central middleware layer for Jarurat Care, mapping patient ingest vectors, localized pharmaceutical distributions, and emergency queues.";
+                    reply = "<b>Architecture Core:</b> MediSupport serves as the central middleware layer for Jarurat Care, mapping patient ingest vectors, localized pharmaceutical distributions, ambulance fleets, and emergency queues.";
                 } else if (query.includes('medicine') || query.includes('dawa')) {
                     reply = "<b>Logistics Pipeline:</b> Free drug distribution maps require active clinical prescriptive tags. Please access the Console Workspace, select 'Medicine Support' on the category options node, and commit your log.";
+                } else if (query.includes('ambulance') || query.includes('gadi') || query.includes('oxygen') || query.includes('blood')) {
+                    reply = "<b>Emergency Logistics Node:</b> Active 24/7 priority routing is live. Please open the Console Workspace, select 'Emergency Ambulance / Core Logistics' from the stream options, and submit to flag our on-call logistics handlers instantly.";
                 } else if (query.includes('volunteer') || query.includes('join')) {
                     reply = "<b>Onboarding Node:</b> Human resource routing is active on the workspace console. Choose 'Volunteer Registration' inside the operations select menu to log metadata.";
                 }
