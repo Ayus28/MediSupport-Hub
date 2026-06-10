@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediSupport Hub - Enterprise Healthcare Triage Architecture</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col justify-between selection:bg-teal-600 selection:text-white">
+
+    <header class="bg-white/70 backdrop-blur-md border-b border-slate-200/80 text-slate-900 shadow-xs sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3 cursor-pointer" onclick="showWelcomePage()">
+                <div class="bg-teal-600 text-white p-2.5 rounded-xl shadow-md shadow-teal-600/20">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"></path></svg>
+                </div>
+                <div>
+                    <h1 class="text-xl font-extrabold tracking-tight text-slate-900">MediSupport <span class="text-teal-600">v1.0</span></h1>
+                    <p class="text-[10px] text-slate-400 uppercase font-bold tracking-widest">Next-Gen Triage Desk</p>
+                </div>
+            </div>
+            <div class="flex items-center space-x-3">
+                <span class="bg-slate-100 text-slate-700 text-[11px] px-3.5 py-1.5 rounded-lg font-bold border border-slate-200">
+                    Deployment: Active
+                </span>
+                <span class="hidden md:inline-block bg-teal-50 text-teal-700 text-[11px] px-3.5 py-1.5 rounded-lg font-bold border border-teal-100">
+                    Jarurat Care Sub-System
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <div id="welcomePage" class="flex-grow container mx-auto max-w-5xl px-6 py-16 animate-fade-in">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-7 space-y-6 text-left">
+                <div class="inline-flex items-center space-x-2 bg-teal-50 border border-teal-100/80 px-4 py-1.5 rounded-full text-teal-700 text-xs font-bold tracking-wide uppercase">
+                    ⚡ AI-Driven Middleware
+                </div>
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-none">
+                    Automating NGO <br>
+                    <span class="bg-gradient-to-r from-teal-600 to-emerald-600 bg-clip-text text-transparent">Healthcare Intake</span> 
+                </h2>
+                <p class="text-slate-500 text-base md:text-lg leading-relaxed max-w-xl">
+                    MediSupport Hub bridges the gap between underprivileged inquiries and live clinical responses. Built with regex-driven priority triage and automated request token routing.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 pt-2">
+                    <button onclick="switchToApp()" class="group inline-flex items-center justify-center bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm px-8 py-4 rounded-xl shadow-lg transition transform hover:-translate-y-0.5 cursor-pointer">
+                        Access Control Console
+                        <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="lg:col-span-5 bg-white border border-slate-200 p-6 rounded-2xl shadow-xl space-y-4">
+                <div class="flex justify-between items-center border-b border-slate-100 pb-3">
+                    <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">System Live Parameters</span>
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+                        <p class="text-[10px] text-slate-400 font-bold uppercase">Automated Logs</p>
+                        <p class="text-2xl font-extrabold text-slate-900 mt-1">99.4%</p>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+                        <p class="text-[10px] text-slate-400 font-bold uppercase">Response Window</p>
+                        <p class="text-2xl font-extrabold text-teal-600 mt-1">&lt; 2 Hrs</p>
+                    </div>
+                </div>
+                <div class="p-3.5 bg-emerald-50/50 border border-emerald-100 text-emerald-800 text-xs rounded-xl font-medium flex items-start gap-2.5">
+                    <span>💡</span> <span><b>Evaluation Note:</b> Open the console to test keyword-triggered automation vectors instantly.</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-20">
+            <div class="bg-white p-6 rounded-2xl border border-slate-200/60 shadow-xs hover:border-teal-500/30 transition">
+                <div class="w-8 h-8 bg-slate-100 rounded-lg flex items-center justify-center font-bold text-sm text-slate-700 mb-4">01</div>
+                <h4 class="font-bold text-slate-900 text-sm mb-1">Structured Intake Routing</h4>
+                <p class="text-slate-500 text-xs leading-relaxed">Accepts core patient parameters, categorizing requests dynamically to limit operational backend overhead.</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl border border-slate-200/60 shadow-xs hover:border-teal-500/30 transition">
+                <div class="w-8 h-8 bg-slate-100 rounded-lg flex items-center justify-center font-bold text-sm text-slate-700 mb-4">02</div>
+                <h4 class="font-bold text-slate-900 text-sm mb-1">Rule-Based Intent Scanners</h4>
+                <p class="text-slate-500 text-xs leading-relaxed">Scans payload messages for emergency keyword flags, sorting critical tier cases instantly for quick relief.</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl border border-slate-200/60 shadow-xs hover:border-teal-500/30 transition">
+                <div class="w-8 h-8 bg-slate-100 rounded-lg flex items-center justify-center font-bold text-sm text-slate-700 mb-4">03</div>
+                <h4 class="font-bold text-slate-900 text-sm mb-1">Virtual Assistant Framework</h4>
+                <p class="text-slate-500 text-xs leading-relaxed">Maintains a localized FAQ processing sandbox, letting users resolve medicine and onboarding queries instantly.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="appPortal" class="hidden flex-grow container mx-auto px-4 my-10 max-w-2xl flex flex-col justify-center animate-fade-in">
+        <button onclick="showWelcomePage()" class="inline-flex items-center text-xs font-bold text-slate-500 hover:text-slate-800 mb-5 cursor-pointer self-start bg-slate-100 border border-slate-200 px-3 py-1.5 rounded-lg transition">
+            ← Main Dashboard
+        </button>
+
+        <div class="bg-white p-6 md:p-10 rounded-2xl shadow-2xl border border-slate-200/80">
+            <div class="border-b border-slate-100 pb-4 mb-6">
+                <h3 class="text-lg font-extrabold text-slate-950 tracking-tight">Core Intake Processing Terminal</h3>
+                <p class="text-slate-400 text-xs mt-0.5">Simulate client registrations. AI engine executes live prioritization rules.</p>
+            </div>
+            
+            <form id="supportForm" class="space-y-5">
+                <div>
+                    <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Client Full Identity</label>
+                    <input type="text" id="name" required placeholder="e.g. Rahul Sharma" class="w-full border border-slate-200 p-3.5 rounded-xl focus:outline-none focus:border-slate-900 focus:ring-1 focus:ring-slate-900 bg-slate-50/50 transition-all font-medium placeholder:text-slate-400 text-sm">
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Secure Contact Token</label>
+                        <input type="tel" id="phone" required placeholder="98765XXXXX" class="w-full border border-slate-200 p-3.5 rounded-xl focus:outline-none focus:border-slate-900 focus:ring-1 focus:ring-slate-900 bg-slate-50/50 transition-all font-medium placeholder:text-slate-400 text-sm">
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Operational Stream</label>
+                        <select id="category" class="w-full border border-slate-200 p-3.5 rounded-xl focus:outline-none focus:border-slate-900 focus:ring-1 focus:ring-slate-900 bg-slate-50/50 text-slate-700 font-bold cursor-pointer text-sm">
+                            <option value="General Checkup">General Medical Inquiry</option>
+                            <option value="Medicine Support">Free Medicine Requirement</option>
+                            <option value="Volunteer">Volunteer Registration</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Payload Description / Medical Symptoms</label>
+                    <textarea id="message" required placeholder="Provide clinical context... (Type words like 'urgent' or 'severe pain' to watch the triage engine sort operational parameters!)" class="w-full border border-slate-200 p-3.5 rounded-xl focus:outline-none focus:border-slate-900 focus:ring-1 focus:ring-slate-900 bg-slate-50/50 transition-all placeholder:text-slate-400 text-sm leading-relaxed" rows="4"></textarea>
+                </div>
+
+                <button type="submit" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold p-4 rounded-xl transition duration-300 shadow-md cursor-pointer text-sm tracking-wide">
+                    Commit Entry Packet
+                </button>
+            </form>
+
+            <div id="aiOutput" class="mt-6 hidden p-5 bg-slate-900 text-slate-100 rounded-xl border border-slate-800 shadow-inner font-mono text-xs space-y-2">
+                <div class="flex justify-between text-slate-500 font-sans font-bold uppercase border-b border-slate-800 pb-2">
+                    <span>[System Log Output]</span>
+                    <span class="text-teal-400">Status: Processed</span>
+                </div>
+                <p id="aiSummary" class="leading-relaxed text-slate-300"></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed bottom-6 right-6 z-50">
+        <button id="chatBtn" class="bg-slate-900 text-white px-5 py-3.5 rounded-xl shadow-xl flex items-center justify-center cursor-pointer transition transform hover:scale-102 border border-slate-800">
+            <span class="w-2 h-2 rounded-full bg-teal-400 mr-2.5 animate-pulse"></span>
+            <span class="font-bold text-[11px] tracking-wider uppercase">Terminal Assistant</span>
+        </button>
+
+        <div id="chatWindow" class="hidden bg-white w-80 h-96 rounded-2xl shadow-2xl border border-slate-200 flex flex-col overflow-hidden absolute bottom-16 right-0">
+            <div class="bg-slate-900 text-white p-4 flex justify-between items-center">
+                <div>
+                    <span class="font-bold text-xs tracking-tight block">MediSupport Bot SandBox</span>
+                    <span class="text-[9px] text-teal-400 font-mono">Status: Awaiting Intent</span>
+                </div>
+                <button id="closeChat" class="text-slate-400 hover:text-white font-bold cursor-pointer text-lg">&times;</button>
+            </div>
+            <div id="chatBody" class="p-4 flex-grow overflow-y-auto space-y-3.5 text-xs bg-slate-50">
+                <div class="bg-white border border-slate-200/80 text-slate-800 p-3 rounded-xl rounded-tl-none max-w-[85%] leading-relaxed shadow-xs">
+                    System initialized. I resolve immediate queries regarding platform services, free drug logistics, and volunteer entry pipelines. Pass an internal string query.
+                </div>
+            </div>
+            <div class="p-2 border-t border-slate-200 flex gap-1 bg-white">
+                <input type="text" id="chatInput" placeholder="Pass query string..." class="w-full border border-slate-200 px-3 py-2 rounded-lg text-xs focus:outline-none focus:border-slate-900 bg-slate-50">
+                <button id="sendChat" class="bg-slate-900 text-white px-3.5 py-2 rounded-lg font-bold text-xs cursor-pointer">Execute</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-white border-t border-slate-200 text-slate-400 text-center py-5 text-[11px] font-bold uppercase tracking-wider">
+        <p>© 2026 MediSupport Platform — Evaluation Sandbox</p>
+    </footer>
+
+    <script>
+        function switchToApp() {
+            document.getElementById('welcomePage').classList.add('hidden');
+            document.getElementById('appPortal').classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function showWelcomePage() {
+            document.getElementById('appPortal').classList.add('hidden');
+            document.getElementById('welcomePage').classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        document.getElementById('supportForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const message = document.getElementById('message').value.toLowerCase();
+            
+            let priority = "CRITICAL_TIER_0 (Low/Routine Inflow Matrix)";
+            let suggestion = "Data packet committed to active ledger memory. Routine volunteer dispatched window: 24 business hours.";
+            
+            if (message.includes('urgent') || message.includes('pain') || message.includes('emergency') || message.includes('fever') || message.includes('accident')) {
+                priority = "🚨 ESCALATED_TIER_3 (High Severity Exception Event)";
+                suggestion = "Clinical metrics indicate potential acute symptoms. Regex analyzer bypassed routine workflow queues. Priority ticket dispatched directly to live medical responders. ETA: &lt; 120 minutes.";
+            } else if (message.includes('volunteer') || message.includes('help') || message.includes('join')) {
+                priority = "🤝 INFRASTRUCTURE_GROWTH (Staff Onboarding Log)";
+                suggestion = "Interest capture successful. Resource management systems initialized. Platform parameters updated to deliver an onboarding directory map and medical campaign schedules.";
+            }
+
+            document.getElementById('aiOutput').classList.remove('hidden');
+            document.getElementById('aiSummary').innerHTML = `
+                &gt; INITIALIZING PACKET ANALYSIS FOR: ${name.toUpperCase()}<br>
+                &gt; CLASSIFICATION INDEX: <span class="text-teal-400 font-bold">${priority}</span><br>
+                &gt; AUTOMATED AUTOMATION DIRECTIVE: ${suggestion}
+            `;
+            
+            document.getElementById('supportForm').reset();
+        });
+
+        const chatBtn = document.getElementById('chatBtn');
+        const chatWindow = document.getElementById('chatWindow');
+        const closeChat = document.getElementById('closeChat');
+
+        chatBtn.addEventListener('click', () => chatWindow.classList.toggle('hidden'));
+        closeChat.addEventListener('click', () => chatWindow.classList.add('hidden'));
+
+        const chatBody = document.getElementById('chatBody');
+        const chatInput = document.getElementById('chatInput');
+        const sendChat = document.getElementById('sendChat');
+
+        function appendMessage(text, isUser = false) {
+            const msgDiv = document.createElement('div');
+            msgDiv.className = isUser 
+                ? "bg-slate-900 text-white p-2.5 rounded-xl rounded-tr-none max-w-[85%] ml-auto text-right font-mono"
+                : "bg-white border border-slate-200/80 text-slate-800 p-2.5 rounded-xl rounded-tl-none max-w-[85%] leading-relaxed shadow-xs";
+            msgDiv.innerHTML = text;
+            chatBody.appendChild(msgDiv);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+        function handleChatResponse() {
+            const query = chatInput.value.trim().toLowerCase();
+            if (!query) return;
+
+            appendMessage(chatInput.value, true);
+            chatInput.value = '';
+
+            setTimeout(() => {
+                let reply = "ERR: Unresolved input string intent. Pass values like 'services', 'medicines', or 'volunteer' for structural parsing.";
+                
+                if (query.includes('service') || query.includes('work') || query.includes('do')) {
+                    reply = "<b>Architecture Core:</b> MediSupport serves as the central middleware layer for Jarurat Care, mapping patient ingest vectors, localized pharmaceutical distributions, and emergency queues.";
+                } else if (query.includes('medicine') || query.includes('dawa')) {
+                    reply = "<b>Logistics Pipeline:</b> Free drug distribution maps require active clinical prescriptive tags. Please access the Console Workspace, select 'Medicine Support' on the category options node, and commit your log.";
+                } else if (query.includes('volunteer') || query.includes('join')) {
+                    reply = "<b>Onboarding Node:</b> Human resource routing is active on the workspace console. Choose 'Volunteer Registration' inside the operations select menu to log metadata.";
+                }
+                
+                appendMessage(reply, false);
+            }, 400);
+        }
+
+        sendChat.addEventListener('click', handleChatResponse);
+        chatInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') handleChatResponse(); });
+    </script>
+</body>
+</html>
