@@ -22,19 +22,13 @@ The platform features a custom asynchronous text analyzer that parses text paylo
 ### 3. Virtual Terminal Assistant Sandbox (FAQ Chatbot Component)
 An embedded chat interface operating on localized pattern-matching modules. It handles instant conversational routing for frequent user queries regarding foundational medical camps, drug logistics pipelines, and registration nodes—significantly lowering backend workforce operational fatigue.
 
----
-
 ## 💻 Technical Stack Overview
 
 * **User Interface layer:** HTML5, Tailwind CSS v3 (Stable Architecture Integration)
 * **Application Framework:** Native Vanilla JavaScript (ES6 Execution Environment)
 * **Design Standards:** Plus Jakarta Sans Typography, Monospace Terminal Logs, Soft Gradients, and Component-driven Micro-interactions.
 
----
-
 ## 🤝 Social and NGO Impact Statement
 In under-resourced medical setups, administrative backlogs cost lives. By automatically isolating high-urgency symptomatic profiles from routine operational queries, MediSupport Hub ensures that life-saving emergency medical resources are accurately directed where they are needed most, maximizing Jarurat Care's on-ground efficiency.
 
----
-*Developed as an engineering assignment solution for the Jarurat Care Evaluation Desk.*
-```
+*Developed as an engineering assignment solution for the Jarurat Care Evaluation Desk*
