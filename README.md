@@ -5,7 +5,7 @@ MediSupport Hub is a premium, high-fidelity concept prototype developed for **Ja
 
 
 ## 🚀 Live Operational Deployment
-- **Production URL:** https://glowing-wisp-8695fd.netlify.app/
+- **Production URL:** https://zingy-dragon-0eecf8.netlify.app/
 - **Source Code Repository:** https://github.com/Ayus28/MediSupport-Hub
 
 
